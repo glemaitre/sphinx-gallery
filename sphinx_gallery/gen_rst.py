@@ -263,7 +263,7 @@ def save_figures(image_path, fig_count, gallery_conf):
                 kwargs[attr] = fig_attr
 
         current_fig = image_path.format(fig_count + fig_num)
-        fig.savefig(current_fig, **kwargs)
+        fig.savefig(current_fig, bbox_inches='tight', **kwargs)
         figure_list.append(current_fig)
 
     if gallery_conf.get('find_mayavi_figures', False):
